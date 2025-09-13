@@ -10,7 +10,8 @@ const recommendations = [
     action: "Route 12951 via A1→A3 to avoid congestion",
     confidence: 94,
     impact: "Reduce delay by 3-5 minutes",
-    urgency: "high"
+    urgency: "high",
+    timeToImplement: "2 min"
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ const recommendations = [
     action: "Move 56478 to Platform 2 for faster departure",
     confidence: 87,
     impact: "Improve throughput by 8%",
-    urgency: "medium"
+    urgency: "medium",
+    timeToImplement: "5 min"
   },
   {
     id: 3,
@@ -26,7 +28,35 @@ const recommendations = [
     action: "Hold 52184 in A5 until 15:20",
     confidence: 91,
     impact: "Clear path for express services",
-    urgency: "low"
+    urgency: "low",
+    timeToImplement: "Immediate"
+  },
+  {
+    id: 4,
+    type: "Speed Optimization",
+    action: "Increase 11077 speed limit to 80 km/h in A8",
+    confidence: 88,
+    impact: "Recover 8 minutes delay",
+    urgency: "high",
+    timeToImplement: "1 min"
+  },
+  {
+    id: 5,
+    type: "Signal Timing",
+    action: "Extend green phase for A2→A3 by 30 seconds",
+    confidence: 92,
+    impact: "Reduce waiting time by 12%",
+    urgency: "medium",
+    timeToImplement: "3 min"
+  },
+  {
+    id: 6,
+    type: "Energy Management",
+    action: "Optimize regenerative braking for 19024",
+    confidence: 85,
+    impact: "Save 15% energy consumption",
+    urgency: "low",
+    timeToImplement: "7 min"
   }
 ];
 
@@ -68,9 +98,12 @@ export const AIRecommendations = () => {
 
             <p className="text-sm text-foreground font-medium">{rec.action}</p>
             
-            <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-              <Clock className="h-3 w-3" />
-              <span>{rec.impact}</span>
+            <div className="flex items-center justify-between text-xs text-muted-foreground">
+              <div className="flex items-center space-x-2">
+                <Clock className="h-3 w-3" />
+                <span>{rec.impact}</span>
+              </div>
+              <span>ETA: {rec.timeToImplement}</span>
             </div>
 
             <div className="flex space-x-2">

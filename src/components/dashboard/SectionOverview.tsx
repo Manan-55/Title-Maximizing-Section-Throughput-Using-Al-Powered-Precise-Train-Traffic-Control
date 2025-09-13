@@ -3,11 +3,18 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, ArrowRight } from "lucide-react";
 
 const trackSections = [
-  { id: "A1", name: "Main Line North", status: "operational", occupancy: 2, capacity: 4 },
-  { id: "A2", name: "Junction East", status: "busy", occupancy: 3, capacity: 3 },
-  { id: "A3", name: "Platform 1-3", status: "operational", occupancy: 1, capacity: 3 },
-  { id: "A4", name: "Goods Yard", status: "maintenance", occupancy: 0, capacity: 2 },
-  { id: "A5", name: "Loop Line", status: "operational", occupancy: 1, capacity: 2 }
+  { id: "A1", name: "Main Line North", status: "operational", occupancy: 2, capacity: 4, length: "2.1 km", signals: 6 },
+  { id: "A2", name: "Junction East", status: "busy", occupancy: 3, capacity: 3, length: "1.8 km", signals: 8 },
+  { id: "A3", name: "Platform 1-3", status: "operational", occupancy: 1, capacity: 3, length: "0.4 km", signals: 4 },
+  { id: "A4", name: "Goods Yard", status: "maintenance", occupancy: 0, capacity: 2, length: "3.2 km", signals: 12 },
+  { id: "A5", name: "Loop Line", status: "operational", occupancy: 1, capacity: 2, length: "1.5 km", signals: 4 },
+  { id: "A6", name: "Main Line South", status: "operational", occupancy: 1, capacity: 4, length: "2.3 km", signals: 7 },
+  { id: "A7", name: "Suburban Loop", status: "busy", occupancy: 2, capacity: 2, length: "0.8 km", signals: 3 },
+  { id: "A8", name: "Bypass Track", status: "operational", occupancy: 1, capacity: 2, length: "4.1 km", signals: 5 },
+  { id: "A9", name: "Freight Siding", status: "operational", occupancy: 1, capacity: 3, length: "2.8 km", signals: 8 },
+  { id: "B1", name: "Express Junction", status: "busy", occupancy: 2, capacity: 2, length: "1.2 km", signals: 6 },
+  { id: "B2", name: "Terminal Approach", status: "operational", occupancy: 0, capacity: 3, length: "1.9 km", signals: 9 },
+  { id: "B3", name: "Shunting Yard", status: "operational", occupancy: 3, capacity: 5, length: "1.6 km", signals: 10 }
 ];
 
 export const SectionOverview = () => {
@@ -20,52 +27,57 @@ export const SectionOverview = () => {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-3 gap-3">
           {trackSections.map((section) => (
             <div
               key={section.id}
-              className="flex items-center justify-between p-4 rounded-lg border border-border bg-muted/20"
+              className="flex flex-col space-y-2 p-3 rounded-lg border border-border bg-muted/20"
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center justify-between">
                 <div className="font-mono text-sm font-semibold text-foreground">
                   {section.id}
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground">{section.name}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {section.occupancy}/{section.capacity} trains
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="flex space-x-1">
-                  {Array.from({ length: section.capacity }).map((_, i) => (
-                    <div
-                      key={i}
-                      className={`w-3 h-3 rounded ${
-                        i < section.occupancy
-                          ? section.status === "operational"
-                            ? "bg-operational"
-                            : section.status === "busy"
-                            ? "bg-warning"
-                            : "bg-muted"
-                          : "bg-muted/30 border border-muted"
-                      }`}
-                    />
-                  ))}
                 </div>
                 <Badge
                   variant="outline"
                   className={
                     section.status === "operational"
-                      ? "bg-operational/10 text-operational border-operational/20"
+                      ? "bg-operational/10 text-operational border-operational/20 text-xs"
                       : section.status === "busy"
-                      ? "bg-warning/10 text-warning border-warning/20"
-                      : "bg-muted/10 text-muted-foreground border-muted/20"
+                      ? "bg-warning/10 text-warning border-warning/20 text-xs"
+                      : "bg-muted/10 text-muted-foreground border-muted/20 text-xs"
                   }
                 >
                   {section.status}
                 </Badge>
+              </div>
+              
+              <div>
+                <p className="text-sm font-medium text-foreground">{section.name}</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mt-1">
+                  <span>{section.occupancy}/{section.capacity} trains</span>
+                  <span>{section.length}</span>
+                </div>
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>{section.signals} signals</span>
+                  <span>{Math.round((section.occupancy / section.capacity) * 100)}% util</span>
+                </div>
+              </div>
+              
+              <div className="flex space-x-1">
+                {Array.from({ length: section.capacity }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`flex-1 h-2 rounded ${
+                      i < section.occupancy
+                        ? section.status === "operational"
+                          ? "bg-operational"
+                          : section.status === "busy"
+                          ? "bg-warning"
+                          : "bg-muted"
+                        : "bg-muted/30 border border-muted"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           ))}

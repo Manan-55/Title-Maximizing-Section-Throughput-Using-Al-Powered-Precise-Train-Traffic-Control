@@ -10,7 +10,8 @@ const alerts = [
     title: "Signal Failure",
     message: "Signal S-142 not responding. Manual operation required.",
     time: "2 min ago",
-    section: "A2"
+    section: "A2",
+    priority: "Urgent"
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ const alerts = [
     title: "Weather Alert",
     message: "Heavy fog expected. Reduce speed limits by 20%.",
     time: "15 min ago",
-    section: "All"
+    section: "All",
+    priority: "High"
   },
   {
     id: 3,
@@ -26,7 +28,53 @@ const alerts = [
     title: "Maintenance Window",
     message: "Scheduled maintenance on A4 starting 16:00.",
     time: "1 hour ago",
-    section: "A4"
+    section: "A4",
+    priority: "Low"
+  },
+  {
+    id: 4,
+    type: "Critical",
+    title: "Track Circuit Fault",
+    message: "TC-A7-01 showing false occupied. Verify manually.",
+    time: "5 min ago",
+    section: "A7",
+    priority: "Urgent"
+  },
+  {
+    id: 5,
+    type: "Warning",
+    title: "Power Supply Issue",
+    message: "OHE voltage fluctuation detected in sector B.",
+    time: "8 min ago",
+    section: "B1-B3",
+    priority: "High"
+  },
+  {
+    id: 6,
+    type: "Info",
+    title: "Speed Restriction",
+    message: "Temporary 40 km/h limit on A5 due to track work.",
+    time: "45 min ago",
+    section: "A5",
+    priority: "Medium"
+  },
+  {
+    id: 7,
+    type: "Warning",
+    title: "Platform Overcrowding",
+    message: "Platform 3 capacity at 95%. Consider crowd control.",
+    time: "3 min ago",
+    section: "P3",
+    priority: "High"
+  },
+  {
+    id: 8,
+    type: "Info",
+    title: "Staff Deployment",
+    message: "Additional loco pilot assigned to 11077.",
+    time: "12 min ago",
+    section: "A8",
+    priority: "Low"
   }
 ];
 

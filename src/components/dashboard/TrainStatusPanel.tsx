@@ -13,7 +13,9 @@ const trains = [
     currentSection: "A1",
     nextSection: "A2",
     eta: "14:25",
-    delay: 0
+    delay: 0,
+    speed: "110 km/h",
+    passengers: 1200
   },
   {
     id: "16340",
@@ -24,7 +26,9 @@ const trains = [
     currentSection: "A3",
     nextSection: "A1",
     eta: "14:32",
-    delay: 7
+    delay: 7,
+    speed: "85 km/h",
+    passengers: 980
   },
   {
     id: "56478",
@@ -35,7 +39,9 @@ const trains = [
     currentSection: "A2",
     nextSection: "A3",
     eta: "14:28",
-    delay: 0
+    delay: 0,
+    speed: "65 km/h",
+    passengers: 1800
   },
   {
     id: "52184",
@@ -46,7 +52,61 @@ const trains = [
     currentSection: "A5",
     nextSection: "A4",
     eta: "15:15",
-    delay: 0
+    delay: 0,
+    speed: "0 km/h",
+    passengers: 0
+  },
+  {
+    id: "19024",
+    name: "Deccan Queen",
+    type: "Express",
+    priority: "High",
+    status: "On Time",
+    currentSection: "A6",
+    nextSection: "A1",
+    eta: "14:35",
+    delay: 0,
+    speed: "95 km/h",
+    passengers: 850
+  },
+  {
+    id: "50123",
+    name: "Suburban Local",
+    type: "Local",
+    priority: "Medium",
+    status: "Early",
+    currentSection: "A7",
+    nextSection: "A3",
+    eta: "14:26",
+    delay: -2,
+    speed: "70 km/h",
+    passengers: 2100
+  },
+  {
+    id: "11077",
+    name: "Jhelum Express",
+    type: "Express",
+    priority: "Medium",
+    status: "Delayed",
+    currentSection: "A8",
+    nextSection: "A5",
+    eta: "14:45",
+    delay: 12,
+    speed: "60 km/h",
+    passengers: 720
+  },
+  {
+    id: "60518",
+    name: "Container Freight",
+    type: "Freight",
+    priority: "Low",
+    status: "On Time",
+    currentSection: "A9",
+    nextSection: "A4",
+    eta: "15:30",
+    delay: 0,
+    speed: "45 km/h",
+    passengers: 0
   }
 ];
 
@@ -95,6 +155,12 @@ export const TrainStatusPanel = () => {
                     <span>{train.currentSection}</span>
                     <ArrowRight className="h-3 w-3" />
                     <span>{train.nextSection}</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                    <span>{train.speed}</span>
+                    <span>•</span>
+                    {train.passengers > 0 && <span>{train.passengers} pax</span>}
+                    {train.passengers === 0 && <span>Freight</span>}
                   </div>
                 </div>
               </div>
