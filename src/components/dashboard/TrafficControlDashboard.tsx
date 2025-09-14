@@ -5,6 +5,8 @@ import { SectionOverview } from "./SectionOverview";
 import { TrainStatusPanel } from "./TrainStatusPanel";
 import { AIRecommendations } from "./AIRecommendations";
 import { AlertsPanel } from "./AlertsPanel";
+import { LiveCharts } from "./LiveCharts";
+import { NetworkMap } from "./NetworkMap";
 
 export const TrafficControlDashboard = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -18,22 +20,33 @@ export const TrafficControlDashboard = () => {
     <div className="min-h-screen bg-background">
       <DashboardHeader currentTime={currentTime} />
       
-      <div className="container mx-auto p-6 grid grid-cols-12 gap-6">
+      <div className="container mx-auto p-6 space-y-6">
         {/* Top Metrics Row */}
-        <div className="col-span-12">
-          <MetricsPanel />
-        </div>
+        <MetricsPanel />
+        
+        {/* Charts and Visual Data */}
+        <LiveCharts />
 
         {/* Main Content Grid */}
-        <div className="col-span-8 space-y-6">
-          <SectionOverview />
-          <TrainStatusPanel />
-        </div>
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-span-5 space-y-6">
+            <SectionOverview />
+          </div>
+          
+          <div className="col-span-4 space-y-6">
+            <NetworkMap />
+          </div>
 
-        {/* Right Sidebar */}
-        <div className="col-span-4 space-y-6">
-          <AIRecommendations />
-          <AlertsPanel />
+          {/* Right Sidebar */}
+          <div className="col-span-3 space-y-6">
+            <AIRecommendations />
+            <AlertsPanel />
+          </div>
+        </div>
+        
+        {/* Bottom Section */}
+        <div className="grid grid-cols-1">
+          <TrainStatusPanel />
         </div>
       </div>
     </div>
