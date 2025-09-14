@@ -9,44 +9,44 @@ import { useState } from "react";
 const recommendations = [
   {
     id: 1,
-    type: "Priority Optimization",
-    action: "Route 12951 via A1→A3 to avoid congestion",
-    confidence: 94,
-    impact: "Reduce delay by 3-5 minutes",
+    type: "Platform Reallocation",
+    action: "Redirect Deccan Queen to Platform 5 at CSTM",
+    confidence: 96,
+    impact: "Reduce congestion by 15%, save 4 minutes",
     urgency: "high",
     timeToImplement: "2 min"
   },
   {
     id: 2,
-    type: "Platform Allocation",
-    action: "Move 56478 to Platform 2 for faster departure",
-    confidence: 87,
-    impact: "Improve throughput by 8%",
-    urgency: "medium",
-    timeToImplement: "5 min"
-  },
-  {
-    id: 3,
-    type: "Holding Strategy",
-    action: "Hold 52184 in A5 until 15:20",
-    confidence: 91,
-    impact: "Clear path for express services",
-    urgency: "low",
+    type: "Western Line Optimization",
+    action: "Express services bypass Andheri for next 20 minutes",
+    confidence: 89,
+    impact: "Clear backlog, improve flow by 12%",
+    urgency: "high",
     timeToImplement: "Immediate"
   },
   {
+    id: 3,
+    type: "JNPT Freight Coordination", 
+    action: "Delay freight movement until 16:00 peak ends",
+    confidence: 94,
+    impact: "Free up 2 crucial track sections",
+    urgency: "medium",
+    timeToImplement: "30 min"
+  },
+  {
     id: 4,
-    type: "Speed Optimization",
-    action: "Increase 11077 speed limit to 80 km/h in A8",
-    confidence: 88,
-    impact: "Recover 8 minutes delay",
+    type: "Harbour Line Diversion",
+    action: "Route Panvel locals via Vashi to reduce TNA load",
+    confidence: 87,
+    impact: "Distribute load, reduce delays by 6 min",
     urgency: "high",
-    timeToImplement: "1 min"
+    timeToImplement: "3 min"
   },
   {
     id: 5,
-    type: "Signal Timing",
-    action: "Extend green phase for A2→A3 by 30 seconds",
+    type: "Central Line Signal",
+    action: "Implement dynamic signaling at Kalyan Junction",
     confidence: 92,
     impact: "Reduce waiting time by 12%",
     urgency: "medium",

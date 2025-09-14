@@ -3,18 +3,21 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, ArrowRight } from "lucide-react";
 
 const trackSections = [
-  { id: "A1", name: "Main Line North", status: "operational", occupancy: 2, capacity: 4, length: "2.1 km", signals: 6 },
-  { id: "A2", name: "Junction East", status: "busy", occupancy: 3, capacity: 3, length: "1.8 km", signals: 8 },
-  { id: "A3", name: "Platform 1-3", status: "operational", occupancy: 1, capacity: 3, length: "0.4 km", signals: 4 },
-  { id: "A4", name: "Goods Yard", status: "maintenance", occupancy: 0, capacity: 2, length: "3.2 km", signals: 12 },
-  { id: "A5", name: "Loop Line", status: "operational", occupancy: 1, capacity: 2, length: "1.5 km", signals: 4 },
-  { id: "A6", name: "Main Line South", status: "operational", occupancy: 1, capacity: 4, length: "2.3 km", signals: 7 },
-  { id: "A7", name: "Suburban Loop", status: "busy", occupancy: 2, capacity: 2, length: "0.8 km", signals: 3 },
-  { id: "A8", name: "Bypass Track", status: "operational", occupancy: 1, capacity: 2, length: "4.1 km", signals: 5 },
-  { id: "A9", name: "Freight Siding", status: "operational", occupancy: 1, capacity: 3, length: "2.8 km", signals: 8 },
-  { id: "B1", name: "Express Junction", status: "busy", occupancy: 2, capacity: 2, length: "1.2 km", signals: 6 },
-  { id: "B2", name: "Terminal Approach", status: "operational", occupancy: 0, capacity: 3, length: "1.9 km", signals: 9 },
-  { id: "B3", name: "Shunting Yard", status: "operational", occupancy: 3, capacity: 5, length: "1.6 km", signals: 10 }
+  { id: "CSTM", name: "Chhatrapati Shivaji Terminus", status: "busy", occupancy: 4, capacity: 6, length: "2.1 km", signals: 12 },
+  { id: "KYN", name: "Kalyan Junction", status: "operational", occupancy: 3, capacity: 5, length: "1.8 km", signals: 8 },
+  { id: "TNA", name: "Thane Station", status: "busy", occupancy: 2, capacity: 3, length: "0.8 km", signals: 6 },
+  { id: "BVI", name: "Borivali Yard", status: "operational", occupancy: 1, capacity: 3, length: "1.2 km", signals: 4 },
+  { id: "ADH", name: "Andheri Complex", status: "busy", occupancy: 3, capacity: 3, length: "1.5 km", signals: 9 },
+  { id: "PNVL", name: "Panvel Junction", status: "operational", occupancy: 2, capacity: 4, length: "2.3 km", signals: 7 },
+  { id: "LTT", name: "Lokmanya Tilak Terminus", status: "operational", occupancy: 2, capacity: 4, length: "1.9 km", signals: 8 },
+  { id: "VR", name: "Virar Terminal", status: "operational", occupancy: 1, capacity: 2, length: "0.9 km", signals: 3 },
+  { id: "JNPT", name: "JNPT Freight Terminal", status: "maintenance", occupancy: 0, capacity: 2, length: "3.2 km", signals: 6 },
+  { id: "IGP", name: "Igatpuri Ghat Section", status: "operational", occupancy: 1, capacity: 2, length: "4.1 km", signals: 5 },
+  { id: "LNL", name: "Lonavala Junction", status: "operational", occupancy: 1, capacity: 3, length: "1.6 km", signals: 4 },
+  { id: "PUNE", name: "Pune Junction", status: "busy", occupancy: 2, capacity: 3, length: "2.2 km", signals: 10 },
+  { id: "BOR", name: "Boisar Section", status: "operational", occupancy: 1, capacity: 2, length: "1.4 km", signals: 3 },
+  { id: "AMB", name: "Ambernath Junction", status: "operational", occupancy: 1, capacity: 2, length: "1.1 km", signals: 4 },
+  { id: "BCT", name: "Mumbai Central", status: "busy", occupancy: 3, capacity: 4, length: "1.8 km", signals: 11 }
 ];
 
 export const SectionOverview = () => {

@@ -13,8 +13,8 @@ export const DashboardHeader = ({ currentTime }: DashboardHeaderProps) => {
           <div className="flex items-center space-x-2">
             <Zap className="h-8 w-8 text-operational" />
             <div>
-              <h1 className="text-2xl font-bold text-foreground">Railway Traffic Control AI</h1>
-              <p className="text-sm text-muted-foreground">Section Controller Dashboard - Zone A</p>
+              <h1 className="text-2xl font-bold text-foreground">Mumbai Railway Network Control</h1>
+              <p className="text-sm text-muted-foreground">Central Railway • Western Railway • Harbour Line</p>
             </div>
           </div>
         </div>

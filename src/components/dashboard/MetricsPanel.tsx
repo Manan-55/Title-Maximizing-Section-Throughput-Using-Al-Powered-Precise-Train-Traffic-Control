@@ -3,30 +3,30 @@ import { TrendingUp, Clock, Train, AlertTriangle } from "lucide-react";
 
 const metrics = [
   {
-    label: "Section Throughput",
-    value: "87.5%",
-    change: "+2.3%",
+    label: "Mumbai Network Load",
+    value: "94.2%",
+    change: "+5.1%",
     icon: TrendingUp,
-    status: "operational" as const
+    status: "warning" as const
   },
   {
-    label: "Avg Delay",
-    value: "4.2 min",
-    change: "-0.8 min",
+    label: "Peak Hour Delay",
+    value: "6.8 min",
+    change: "+1.2 min",
     icon: Clock,
-    status: "success" as const
+    status: "warning" as const
   },
   {
     label: "Active Trains",
-    value: "23",
-    change: "+3",
+    value: "847",
+    change: "+23",
     icon: Train,
     status: "operational" as const
   },
   {
-    label: "Critical Alerts",
-    value: "2",
-    change: "0",
+    label: "Signal Failures",
+    value: "3",
+    change: "+1",
     icon: AlertTriangle,
     status: "warning" as const
   }
@@ -34,40 +34,40 @@ const metrics = [
 
 const additionalMetrics = [
   {
-    label: "Platform Utilization",
-    value: "76.8%",
-    change: "+4.1%",
-    status: "operational" as const
-  },
-  {
-    label: "Signal Response Time",
-    value: "0.8s",
-    change: "-0.2s",
-    status: "success" as const
-  },
-  {
-    label: "Track Occupancy",
-    value: "12/18",
-    change: "+2",
-    status: "operational" as const
-  },
-  {
-    label: "Energy Efficiency",
-    value: "92.3%",
-    change: "+1.5%",
-    status: "success" as const
-  },
-  {
-    label: "Schedule Adherence",
-    value: "94.7%",
-    change: "+3.2%",
-    status: "success" as const
-  },
-  {
-    label: "Peak Hour Load",
-    value: "156%",
-    change: "+12%",
+    label: "CSTM Platform Load",
+    value: "89.4%",
+    change: "+8.2%",
     status: "warning" as const
+  },
+  {
+    label: "Western Line Flow",
+    value: "91.2%",
+    change: "+4.5%",
+    status: "operational" as const
+  },
+  {
+    label: "Central Line Load",
+    value: "96.8%",
+    change: "+7.1%",
+    status: "warning" as const
+  },
+  {
+    label: "Harbour Line",
+    value: "83.5%",
+    change: "+2.8%",
+    status: "operational" as const
+  },
+  {
+    label: "Passenger Throughput",
+    value: "7.2M",
+    change: "+450K",
+    status: "operational" as const
+  },
+  {
+    label: "Freight Movement",
+    value: "2.4K TEU",
+    change: "+180",
+    status: "success" as const
   }
 ];
 
@@ -86,7 +86,6 @@ export const MetricsPanel = () => {
                   <p className="text-sm text-muted-foreground">{metric.label}</p>
                   <p className="text-2xl font-bold text-foreground">{metric.value}</p>
                   <p className={`text-xs ${
-                    metric.status === 'success' ? 'text-success' :
                     metric.status === 'operational' ? 'text-operational' :
                     metric.status === 'warning' ? 'text-warning' : 'text-muted-foreground'
                   }`}>
@@ -94,7 +93,6 @@ export const MetricsPanel = () => {
                   </p>
                 </div>
                 <metric.icon className={`h-8 w-8 ${
-                  metric.status === 'success' ? 'text-success' :
                   metric.status === 'operational' ? 'text-operational' :
                   metric.status === 'warning' ? 'text-warning' : 'text-muted-foreground'
                 }`} />
