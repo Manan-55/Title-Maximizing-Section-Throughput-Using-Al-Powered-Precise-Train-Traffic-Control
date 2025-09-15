@@ -20,21 +20,12 @@ export const TrafficControlDashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       <NavigationBar />
+      <DashboardHeader currentTime={currentTime} />
       
       <div className="container mx-auto p-6 space-y-6">
         {/* Top Metrics Row */}
         <MetricsPanel />
         
-        {/* Network Map and Performance Table */}
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-7">
-            <NetworkMap />
-          </div>
-          <div className="col-span-5">
-            <TrainStatusPanel />
-          </div>
-        </div>
-
         {/* Charts and Visual Data */}
         <LiveCharts />
 
@@ -45,13 +36,19 @@ export const TrafficControlDashboard = () => {
           </div>
           
           <div className="col-span-4 space-y-6">
-            <AIRecommendations />
+            <NetworkMap />
           </div>
 
           {/* Right Sidebar */}
           <div className="col-span-3 space-y-6">
+            <AIRecommendations />
             <AlertsPanel />
           </div>
+        </div>
+        
+        {/* Bottom Section */}
+        <div className="grid grid-cols-1">
+          <TrainStatusPanel />
         </div>
       </div>
     </div>
