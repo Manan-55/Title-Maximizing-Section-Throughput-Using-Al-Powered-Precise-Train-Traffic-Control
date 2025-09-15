@@ -26,7 +26,7 @@ export const TrafficControlDashboard = () => {
         <MetricsPanel />
         
         {/* Charts and Visual Data */}
-        <LiveCharts />
+        <NetworkMap />
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-12 gap-6">
@@ -35,7 +35,7 @@ export const TrafficControlDashboard = () => {
           </div>
           
           <div className="col-span-4 space-y-6">
-            <NetworkMap />
+            <LiveCharts />
           </div>
 
           {/* Right Sidebar */}
