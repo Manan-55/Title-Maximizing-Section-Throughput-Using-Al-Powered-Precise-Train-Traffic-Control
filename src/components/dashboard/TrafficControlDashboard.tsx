@@ -25,8 +25,18 @@ export const TrafficControlDashboard = () => {
         {/* Top Metrics Row */}
         <MetricsPanel />
         
+        {/* Network Map and Performance Table */}
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-span-7">
+            <NetworkMap />
+          </div>
+          <div className="col-span-5">
+            <TrainStatusPanel />
+          </div>
+        </div>
+
         {/* Charts and Visual Data */}
-        <NetworkMap />
+        <LiveCharts />
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-12 gap-6">
@@ -35,19 +45,13 @@ export const TrafficControlDashboard = () => {
           </div>
           
           <div className="col-span-4 space-y-6">
-            <LiveCharts />
+            <AIRecommendations />
           </div>
 
           {/* Right Sidebar */}
           <div className="col-span-3 space-y-6">
-            <AIRecommendations />
             <AlertsPanel />
           </div>
-        </div>
-        
-        {/* Bottom Section */}
-        <div className="grid grid-cols-1">
-          <TrainStatusPanel />
         </div>
       </div>
     </div>
